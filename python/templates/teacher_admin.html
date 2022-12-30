@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<title>Школа вокала "Голосовое"</title>
+		<meta charset="utf-8">
+	</HEAD>
+	<form action="/service-admin" method="get">
+		<input type="submit" value="Назад">
+	</form>
+
+	<BODY bgcolor="#B0E0E6">
+	<div style="text-align: center">
+			<h1>Школа вокала "Голосовое"</h1>
+		<h2>Добавить учителя</h2>
+		<form action="/teacher-admin-add" method="post" content="application/json">
+        <input type="text" name="surname" placeholder="Фамилия"/><br>
+        <input type="text" name="name" placeholder="Имя"/><br>
+        <input type="text" name="education" placeholder="Образование"/><br>
+            <input type="text" name="teaching_exp" placeholder="Опыт преподавания(лет)"/><br>
+            <input type="text" name="vocal_exp" placeholder="Опыт в вокале(лет)"/><br>
+			<input type="text" name="description" placeholder="Описание"/><br>
+            <input type="submit" value="Создать">
+    	</form>
+    </div>
+
+	</BODY>
+</HTML>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Школа вокала "Голосовое"</title>
+</head>
+<form action="/service" method="get">
+		<input type="submit" value="Назад">
+	</form>
+<body bgcolor="#B0E0E6">
+<div style="text-align: center">
+  {% for tmp in timetable %}
+    <p><b>
+      Дата: {{tmp.date_}}
+      Время: {{tmp.time_}}
+      </b>
+      Преподаватель: {{tmp.teacher.name}}
+      {{tmp.teacher.surname}}
+      Кабинет: {{tmp.cabinet.number}}
+      Корпус: {{tmp.cabinet.building}}
+      <form action="/sign-up-lesson" method="post">
+        <select name="id_module">
+          {% for module in modules %}
+            <option value={{module.module.id}}>{{module.module.name}}</option>
+          {% endfor %}
+        </select>
+        <input type="hidden" value={{tmp.id}} name="id_lesson">
+		<input type="submit" value="Записаться">
+	</form>
+    </p>
+    <p>
+      ------------------------
+    </p>
+  {% endfor %}
+</div>
+</body>
+</html>

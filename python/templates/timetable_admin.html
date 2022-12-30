@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+		<title>Школа вокала "Голосовое"</title>
+		<meta charset="utf-8">
+	</HEAD>
+	<form action="/service-admin" method="get">
+		<input type="submit" value="Назад">
+	</form>
+
+	<BODY bgcolor="#B0E0E6">
+	<div style="text-align: center">
+			<h1>Школа вокала "Голосовое"</h1>
+		<h2>Добавление занятия</h2>
+		<form action="/timetable-admin-add" method="post" content="application/json">
+        <input type="text" name='time_' placeholder="Время ЧЧ:ММ:СС"/><br>
+        <input type="text" name='date_' placeholder="Дата ГГГГ-ММ-ДД"/><br>
+            <select name="id_teacher">
+          {% for teacher in teachers %}
+            <option value={{teacher.id}}>{{teacher.name}} {{teacher.surname}}</option>
+          {% endfor %}
+        </select>
+            <select name="id_cabinet">
+          {% for cabinet in cabinets %}
+            <option value={{cabinet.id}}>Кабинет: {{cabinet.number}} Корпус: {{cabinet.building}}</option>
+          {% endfor %}
+        </select>
+            <select name="type">
+            <option value='групповое'>Групповое</option>
+            <option value='индивидуальное'>Индивидуальное</option>
+        </select>
+            <input type="submit" value="Создать">
+    	</form>
+    </div>
+
+	</BODY>
+</HTML>
